@@ -3071,14 +3071,15 @@ if (!q) return reply('Linknya?')
              console.log(res)
 })
              break
-      case 'shortlink':
-        if (!isRegister) return reply(mess.regits)
+      case 'ssweb':
              if (args.length == 0) return reply(`Example: ${prefix + command} https://nekopoi.care/`)
+             reply(mess.wait)
              ini_link = args[0]
-             ini_buffer = await getBuffer(`https://api.xteam.xyz/shorturl/bitly?url=${ini_link}&APIKEY=4ea2f5b23aef889d`)
-             await ikyy.sendMessage(from, ini_buffer, image, { quoted: mek })
+             ini_buffer = await getBuffer(`https://hardianto-chan.herokuapp.com/api/tools/ssweb?url=${ini_link}&apikey=hardianto`)
+             await ikyy.sendMessage(from, ini_buffer, image, { quoted: freply })
              break
        case 'nhentaipdf':
+       case 'nhentaibot':
          if (!isRegister) return reply(mess.regits)
              if (!isPremium) return reply(mess.only.premium)
              if (args.length == 0) return reply(`Usage: ${prefix + command} query\nExample: ${prefix + command} 317986`)
@@ -3099,7 +3100,8 @@ if (!q) return reply('Linknya?')
              reply(String(e))
 }
              break
-       case 'nhentai':
+       case 'nhentai':       
+       case 'nhentaibot':
          if (!isRegister) return reply(mess.regits)
               if (!isPremium) return reply(mess.only.premium)
               if (args.length == 0) return reply(`Example: ${prefix + command} 344253`)
